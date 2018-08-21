@@ -1,0 +1,12 @@
+trimmomatic SE  ERR458501.fastq.gz \
+        ERR458501.fq.gz \
+        ILLUMINACLIP:TruSeq2-PE.fa:3:45:15 \
+        LEADING:3 TRAILING:3 \
+        SLIDINGWINDOW:3:3 \
+        MINLEN:24    
+
+trimmomatic SE ERR458501.fastq.gz \
+        ERR458501.qc.fq.gz \
+        ILLUMINACLIP:TruSeq2-PE.fa:2:40:15 \
+        SLIDINGWINDOW:4:30 \
+        MINLEN:40
