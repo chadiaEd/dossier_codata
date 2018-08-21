@@ -10,3 +10,22 @@ trimmomatic SE ERR458501.fastq.gz \
         ILLUMINACLIP:TruSeq2-PE.fa:2:40:15 \
         SLIDINGWINDOW:4:30 \
         MINLEN:40
+
+
+bwa mem -t 4 orf_coding.fasta ERR458502.qc.fq.gz  > ERR458502.sam
+
+samtools import orf_coding.fasta.fai ERR458502.sam ERR458502.bam
+
+samtools sort ERR458502.bam -o ERR458502.sorted.bam
+samtools index ERR458502.sorted.bam
+samtools tview ERR458502.sorted.bam orf_coding.fasta
+samtools flagstat ERR458502.sorted.bam
+
+samtools mpileup -D -u -t DP -f orf_coding.fasta ERR458502.sorted.bam ERR458493.sorted.bam | \
+    bcftools call -mv -Ov > variants3.vcf
+
+samtools mpileup -u -t DP -f orf_coding.fasta ERR458493.sorted.bam | \
+    bcftools call -mv -Ov > variants.vcf
+
+
+  
