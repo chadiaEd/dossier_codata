@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1534772401138.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "16320964",
+    "id" : "2E5ACCE2",
+    "lastKnownWriteTime" : 1534780086,
+    "last_content_update" : 1534780086332,
+    "path" : "~/chadia-files/workshop/day1.R",
+    "project_path" : "day1.R",
+    "properties" : {
+        "cursorPosition" : "149,72",
+        "scrollLine" : "120"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

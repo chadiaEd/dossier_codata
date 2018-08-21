@@ -1,0 +1,75 @@
+---
+title: "R2__"
+author: "chadia"
+date: "August 8, 2018"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r global_options, echo=FALSE}
+knitr::opts_chunk$set(fig.path = "../figs/", message = FALSE, warning = FALSE,
+                      fig.width = 11)
+```
+## The gapminder dataset
+
+```{r download_file}
+if (!file.exists("../Data/gapminder.csv")) {
+  download.file(url = "http://tiny.cc/SWCgapminder",
+              destfile = "../data/SWCgapminder.csv")
+}
+```
+
+```{r load_lib, message=FALSE}
+library(tidyverse)
+```
+
+```{r read_data}
+gapminder <- read_csv("../Data/gapminder.csv")
+```
+
+## Exploring the dataset
+```{r explore_gapminder}
+glimpse(gapminder)
+```
+
+## Question
+
+## Analysis
+
+Describe how did you wrangle your date to solve your question
+
+```{r analysis}
+Morocco_pop <- gapminder[gapminder$country == "Morocco", ] %>% select( year, pop) 
+
+
+```
+
+## Results
+
+Short description of your results table
+
+```{r table_1_analysis}
+#objectName %>% 
+#    knitr::kable(caption = "Table 1: Caption of your table")
+
+```
+
+Answering the question with a plot
+
+```{r fig_1_analysis, fig.height=5, fig.width=10, fig.cap="Figure 1: Name of your figure"}
+
+ggplot(data = Morocco_pop , aes(x=year, y=pop ) )+
+  geom_line()+
+ggsave(filename =  "Figures/Morocco_pop.png")
+```
+
+
+## Conclusion
+
+Write a short conclusion of your observations and how the analyis in R helped you answer your question.
+
+

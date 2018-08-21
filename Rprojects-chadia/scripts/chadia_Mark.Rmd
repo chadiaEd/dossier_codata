@@ -1,0 +1,31 @@
+---
+title: "001_Rmarkdown"
+author: "chadia"
+date: "August 8, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Working Directoy ----
+```{R eval = FALSE}
+ setwd("~/chadia-files/Rprojects-chadia")
+```
+
+## Load the packages ----
+```{R eval = FALSE}
+ library(tidyverse)
+```
+## Load gapminder dataset
+```{R eval = FALSE}
+
+gapminder1 <- read_csv(file="Data/gapminder.csv")
+
+```
+
+## Exploring the dataset
+```{r explore_gapminder}
+glimpse(gapminder)
+```
